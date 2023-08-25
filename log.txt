@@ -64,3 +64,4 @@ TimesStamp: Wed Aug 23 2023 08:25:34 GMT+0100 (British Summer Time)
 URL: /favicon.ico
 TimesStamp: Wed Aug 23 2023 08:25:34 GMT+0100 (British Summer Time)
 
+::1 - - [25/Aug/2023:18:11:56 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
