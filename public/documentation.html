@@ -1,16 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>James Bond API</h1>
-    <p>This API will store information on all 27 of the James Bond films released since 1962</p>
-    
-</body>
+    <link rel="stylesheet" href="../css/documentation.css">
+  </head>
+  <body>
+    <h1 class="title">James Bond API</h1>
+    <p class="sub-text">
+      This API will store information on all 27 of the James Bond films released
+      since 1962
+    </p>
+    <br>
+    <br>
+    <br>
+    <!-- <table class="table1"> -->
+      <!-- <thead>
+        <tr>
+            <th>REQUEST</th>
+            <th>URL</th>
+            <th>HTTP METHOD</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>Get a list of James Bond films</td>
+                <td>/movies</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title</td>
+                <td>/movies/[title]</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>Return data about actor</td>
+                <td>/movies[actor]</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>Return data about a director (bio, birth year, death year) by name</td>
+                <td>/movies[director]</td>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <td>Allow new users to register</td>
+                <td>/users</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>Allow users to update their user info (username)</td>
+                <td>/users[username]</td>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <td>Allow users to add a movie to their list of favorites</td>
+                <td>/movies/[favourites]/[title]</td>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <td>Allow users to remove a movie from their list of favorites</td>
+                <td>/movies/[favourites]/[title]</td>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <td>Allow existing users to deregister</td>
+                <td>/users</td>
+                <td>DELETE</td>
+            </tr>
+        </tbody>
+      </thead> -->
+    <!-- </table> -->
+    <br>
+    <!-- <br>
+    <br>
+    <br> -->
+    <table class="table2">
+        <thead>
+          <tr>
+              <th>Business Logic</th>
+              <th>URL</th>
+              <th>HTTP Method</th>
+              <th>Request body data format</th>
+              <th>Response body data format</th>
+          </tr>
+          <tbody>
+              <tr>
+                  <td>Get a list of James Bond films</td>
+                  <td>/movies</td>
+                  <td>GET</td>
+                  <td>None</td>
+                  <td>A JSON object holding data about all the movies</td>
+              </tr>
+              <tr>
+                  <td>Get data about a single film by title</td>
+                  <td>/movies/[title]</td>
+                  <td>GET</td>
+                  <td>None</td>
+                  <td>A JSON object holding data about a single James Bond film, title, director, actor, year. Example:
+                    {
+                        title: 'Casino Royale',
+                        director: 'Martin Campbell',
+                        actor: 'Daniel Craig'
+                        year: '2006'
+
+                    }
+                  </td>
+              </tr>
+              <!-- <tr>
+                  <td>Get data about an actor by actors name</td>
+                  <td>/movies[actor]</td>
+                  <td>GET</td>
+                  <td>None</td>
+                  <td>A JSON object holding information about the actor:
+                    {
+                        name: 'Daniel Craig',
+                        age: 55,
+                        DOB: '02/03/1968'
+                    }
+                  </td>
+              </tr> -->
+              <tr>
+                  <td>Get data about a director by directors name</td>
+                  <td>/movies[director]</td>
+                  <td>GET</td>
+                  <td>None</td>
+                  <td>A JSON object holding information about the director:
+                    {
+                        name: 'Martin Campbell',
+                        age: 79,
+                        DOB: '24/10/1943'
+                    }
+                  </td>
+              </tr>
+              <tr>
+                  <td>Register a user</td>
+                  <td>/users</td>
+                  <td>POST</td>
+                  <td>A JSON object holding data about a user to register:
+                    {
+                        name: 'Tom Smith',
+                        favouriteFilms: []
+                    }
+                  </td>
+                  <td>A JSON object holding data about the user that was added, including an ID:
+                    {
+                        id: 3,
+                        name: 'Tom Smith',
+                        favouriteFilms: []
+                    }
+                  </td>
+              </tr>
+              <tr>
+                  <td>Update user information</td>
+                  <td>/users[username]</td>
+                  <td>PUT</td>
+                  <td>None</td>
+                  <td>A text message indicating the student name and username that was updated</td>
+              </tr>
+              <tr>
+                  <td>Users ability to save favourite Bond films</td>
+                  <td>/movies/[favourites]/[title]</td>
+                  <td>POST</td>
+                  <td>A JSON object holding data on the students favourite Bond films:
+                    {
+                        title: 'Casino Royale';
+                    }
+                  </td>
+                  <td>
+                    A JSON object holding data on the students favourite Bond films:
+                    {
+                        title: 'Casino Royale';
+                    }
+                  </td>
+              </tr>
+              <tr>
+                  <td>Users ability to remove title from favourite Bond films</td>
+                  <td>/movies/[favourites]/[title]</td>
+                  <td>DELETE</td>
+                  <td>None</td>
+                  <td>A text message indicating whether the film was succesfully removed from favourites list</td>
+              </tr>
+              <tr>
+                  <td>Users ability to deregister</td>
+                  <td>/users</td>
+                  <td>DELETE</td>
+                  <td>None</td>
+                  <td>A text message indicating whether user unregistered succesfully</td>
+              </tr>
+          </tbody>
+        </thead>
+      </table>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+  </body>
 </html>
-
-
