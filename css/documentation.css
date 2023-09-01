@@ -1,0 +1,33 @@
+/* Style for the table in documentation */
+
+.title {
+    text-align: center;
+}
+
+.sub-text {
+    text-align: center;
+}
+
+.table1 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid black 3px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+td {
+    border: solid black 1px;
+    padding: 5px;
+}
+
+.table2 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid black 3px;
+    padding: 5px;
+    border-radius: 8px;
+    width: 90%;
+}
