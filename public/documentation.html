@@ -16,66 +16,9 @@
     <br>
     <br>
     <br>
-    <!-- <table class="table1"> -->
-      <!-- <thead>
-        <tr>
-            <th>REQUEST</th>
-            <th>URL</th>
-            <th>HTTP METHOD</th>
-        </tr>
-        <tbody>
-            <tr>
-                <td>Get a list of James Bond films</td>
-                <td>/movies</td>
-                <td>GET</td>
-            </tr>
-            <tr>
-                <td>Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title</td>
-                <td>/movies/[title]</td>
-                <td>GET</td>
-            </tr>
-            <tr>
-                <td>Return data about actor</td>
-                <td>/movies[actor]</td>
-                <td>GET</td>
-            </tr>
-            <tr>
-                <td>Return data about a director (bio, birth year, death year) by name</td>
-                <td>/movies[director]</td>
-                <td>GET</td>
-            </tr>
-            <tr>
-                <td>Allow new users to register</td>
-                <td>/users</td>
-                <td>POST</td>
-            </tr>
-            <tr>
-                <td>Allow users to update their user info (username)</td>
-                <td>/users[username]</td>
-                <td>PUT</td>
-            </tr>
-            <tr>
-                <td>Allow users to add a movie to their list of favorites</td>
-                <td>/movies/[favourites]/[title]</td>
-                <td>POST</td>
-            </tr>
-            <tr>
-                <td>Allow users to remove a movie from their list of favorites</td>
-                <td>/movies/[favourites]/[title]</td>
-                <td>DELETE</td>
-            </tr>
-            <tr>
-                <td>Allow existing users to deregister</td>
-                <td>/users</td>
-                <td>DELETE</td>
-            </tr>
-        </tbody>
-      </thead> -->
-    <!-- </table> -->
+  
     <br>
-    <!-- <br>
-    <br>
-    <br> -->
+
     <table class="table2">
         <thead>
           <tr>
@@ -108,19 +51,6 @@
                     }
                   </td>
               </tr>
-              <!-- <tr>
-                  <td>Get data about an actor by actors name</td>
-                  <td>/movies[actor]</td>
-                  <td>GET</td>
-                  <td>None</td>
-                  <td>A JSON object holding information about the actor:
-                    {
-                        name: 'Daniel Craig',
-                        age: 55,
-                        DOB: '02/03/1968'
-                    }
-                  </td>
-              </tr> -->
               <tr>
                   <td>Get data about a director by directors name</td>
                   <td>/movies[director]</td>
@@ -139,56 +69,111 @@
                   <td>/users</td>
                   <td>POST</td>
                   <td>A JSON object holding data about a user to register:
+                    <br>
                     {
-                        name: 'Tom Smith',
-                        favouriteFilms: []
+                        <br>
+                        "Username": "Tom Smith",
+                        <br>
+                        "Password": "Chocolate22",
+                        <br>
+                        "Email": "apple@gmail.com",
+                        <br>
+                        "DOB": "01/08/87"
+                        <br>
                     }
                   </td>
-                  <td>A JSON object holding data about the user that was added, including an ID:
+                  <td>
+                    A JSON object holding data about the registered user:
+                    <br>
                     {
-                        id: 3,
-                        name: 'Tom Smith',
-                        favouriteFilms: []
+                        <br>
+                        "Username": "Tom Smith",
+                        <br>
+                        "Password": "Chocolate22",
+                        <br>
+                        "Email": "apple@gmail.com",
+                        <br>
+                        "DOB": "01/08/87"
+                        <br>
                     }
                   </td>
               </tr>
+              <tr>
+                <td>Unregister a user</td>
+                <td>/users[username]</td>
+                <td>Delete</td>
+                <td>None</td>
+                <td>
+                  Text message indicating if user was deleted
+                </td>
+            </tr>
               <tr>
                   <td>Update user information</td>
                   <td>/users[username]</td>
                   <td>PUT</td>
-                  <td>None</td>
-                  <td>A text message indicating the student name and username that was updated</td>
+                  <td>A JSON object holding data with updated information:
+                    <br>
+                    {
+                        <br>
+                        "Username": "Tom Smith",
+                        <br>
+                        "Password": "Fruit22",
+                        <br>
+                        "Email": "apple@gmail.com",
+                        <br>
+                        "DOB": "01/08/87"
+                        <br>
+                    }</td>
+                  <td>A JSON object with the updated information and version: <br><br>
+                    {<br>
+                    "_id": "65034384a926abd2124b0655",<br>
+                    "Username": "Tom Smith",<br>
+                    "FavouriteFilms": [],<br>
+                    "DOB": "1987-08-01T00:00:00.000Z",<br>
+                    "Email": "apple@gmail.com",<br>
+                    "Password": "Chocolate22",<br>
+                    "__v": 0<br>
+                    
+                }</td>
               </tr>
               <tr>
-                  <td>Users ability to save favourite Bond films</td>
-                  <td>/movies/[favourites]/[title]</td>
+                  <td>Users ability to add films to there favourites via the films id </td>
+                  <td>/users/[username]/movies/[id]</td>
                   <td>POST</td>
-                  <td>A JSON object holding data on the students favourite Bond films:
-                    {
-                        title: 'Casino Royale';
-                    }
+                  <td>None
                   </td>
                   <td>
-                    A JSON object holding data on the students favourite Bond films:
-                    {
-                        title: 'Casino Royale';
-                    }
+                    A JSON object with the updated information and version: <br><br>
+                    {<br>
+                    "_id": "65034384a926abd2124b0655",<br>
+                    "Username": "Tom Smith",<br>
+                    "FavouriteFilms": [64f897d28b23c0576f5ec9d3],<br>
+                    "DOB": "1987-08-01T00:00:00.000Z",<br>
+                    "Email": "apple@gmail.com",<br>
+                    "Password": "Chocolate22",<br>
+                    "__v": 0<br>
+                    
+                }
                   </td>
               </tr>
               <tr>
                   <td>Users ability to remove title from favourite Bond films</td>
-                  <td>/movies/[favourites]/[title]</td>
+                  <td>/users/[username]/movies/[id]</td>
                   <td>DELETE</td>
                   <td>None</td>
-                  <td>A text message indicating whether the film was succesfully removed from favourites list</td>
+                  <td>A JSON object with the updated information and version: <br><br>
+                    {<br>
+                    "_id": "65034384a926abd2124b0655",<br>
+                    "Username": "Tom Smith",<br>
+                    "FavouriteFilms": [],<br>
+                    "DOB": "1987-08-01T00:00:00.000Z",<br>
+                    "Email": "apple@gmail.com",<br>
+                    "Password": "Chocolate22",<br>
+                    "__v": 0<br>
+                    
+                }</td>
               </tr>
-              <tr>
-                  <td>Users ability to deregister</td>
-                  <td>/users</td>
-                  <td>DELETE</td>
-                  <td>None</td>
-                  <td>A text message indicating whether user unregistered succesfully</td>
-              </tr>
+         
           </tbody>
         </thead>
       </table>
