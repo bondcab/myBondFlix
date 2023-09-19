@@ -23,7 +23,13 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 // 2.8 - Code to connect Mongoose to bondFilmDB in MongoDB
-mongoose.connect("mongodb://localhost:27017/bondFilmDB", {
+// mongoose.connect("mongodb://localhost:27017/bondFilmDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// 2.10 - Connection to online database
+mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
