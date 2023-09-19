@@ -99,6 +99,28 @@
                   </td>
               </tr>
               <tr>
+                <td>User Login</td>
+                <td>/users?Username=[username]&Password=[password]</td>
+                <td>POST</td>
+                <td>None
+                </td>
+                <td>
+                  A JSON object holding data about the registered user:
+                  <br>
+                  {
+                      <br>
+                      "Username": "Tom Smith",
+                      <br>
+                      "Password": "Chocolate22",
+                      <br>
+                      "Email": "apple@gmail.com",
+                      <br>
+                      "DOB": "01/08/87"
+                      <br>
+                  }
+                </td>
+            </tr>
+              <tr>
                 <td>Unregister a user</td>
                 <td>/users[username]</td>
                 <td>Delete</td>
