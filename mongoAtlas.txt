@@ -1,0 +1,6 @@
+mongoimport --uri mongodb+srv://bondcab:safe88safe@db.foqeags.mongodb.net/myBondFLix --collection movies --type json --file /Users/bondcab/Documents/GitHub/myBondFlix/exports/movies.json
+mongoimport --uri mongodb+srv://bondcab:safe88safe@db.foqeags.mongodb.net/myBondFLix --collection users --type json --file /Users/bondcab/Documents/GitHub/myBondFlix/exports/users.json
+
+mongosh "mongodb+srv://db.foqeags.mongodb.net/myBondFLix" --apiVersion 1 --username bondcab
+
+mongodb+srv://bondcab:<password>@db.foqeags.mongodb.net/?retryWrites=true&w=majority
