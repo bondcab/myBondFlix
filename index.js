@@ -29,7 +29,7 @@ const Users = Models.User;
 // });
 
 // 2.10 - Connection to online database
-mongoose.connect(CONNECTION_URI, {
+mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
