@@ -23,13 +23,7 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 // 2.8 - Code to connect Mongoose to bondFilmDB in MongoDB
-// mongoose.connect("mongodb://localhost:27017/bondFilmDB", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-
-// 2.10 - Connection to online database
-mongoose.connect(CONNECTION_URI, {
+mongoose.connect("mongodb://localhost:27017/bondFilmDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -60,7 +54,7 @@ app.use(express.urlencoded({ extended: true }));
 // 2.8 - Returns all movies
 app.get(
   "/movies",
-  passport.authenticate("jwt", { session: false }),
+
   async (req, res) => {
     await Movies.find()
       .then((movie) => {
