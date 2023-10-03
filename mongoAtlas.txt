@@ -4,3 +4,21 @@ mongoimport --uri mongodb+srv://bondcab:safe88safe@db.foqeags.mongodb.net/myBond
 mongosh "mongodb+srv://db.foqeags.mongodb.net/myBondFLix" --apiVersion 1 --username bondcab
 
 mongodb+srv://bondcab:<password>@db.foqeags.mongodb.net/?retryWrites=true&w=majority
+
+
+
+mongodb+srv://bondcab:safe88safe@db.foqeags.mongodb.net/?retryWrites=true&w=majority
+
+
+heroku git:clone -a bond-flix
+
+
+git add index.js
+git commit -m "Update mongoose connection to use CONNECTION_URI"
+git push heroku main
+
+heroku git:clone -a your-app-name
+
+
+heroku config:set CONNECTION_URI=mongodb+srv://bondcab:safe88safe@db.foqeags.mongodb.net/myBondFlix?retryWrites=true&w=majority -a bond-flix
+
