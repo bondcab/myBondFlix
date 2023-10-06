@@ -45,9 +45,6 @@ app.use(morgan("combined", { stream: accessLogStream }));
 // 2.10 - Cross-Origin Resource Sharing module express will use
 app.use(cors());
 
-// 2.9 - auth.js
-let auth = require("./auth")(app);
-
 //2.9 - Passport module
 const passport = require("passport");
 require("./passport");
@@ -55,6 +52,9 @@ require("./passport");
 //For when accessing the body of a request using req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// 2.9 - auth.js
+let auth = require("./auth")(app);
 
 //GET Requests on movies
 // 2.8 - Returns all movies
