@@ -60,7 +60,7 @@ let auth = require("./auth")(app);
 // 2.8 - Returns all movies
 app.get(
   "/movies",
-  // passport.authenticate("jwt", { session: false }),
+  passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     await Movies.find()
       .then((movie) => {
