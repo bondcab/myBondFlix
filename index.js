@@ -43,7 +43,9 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
 app.use(morgan("combined", { stream: accessLogStream }));
 
 // 3.9 - Cross-Origin Resource Sharing module express will use
-let allowedOrigins = ["https://my-bond-flix.netlify.app/"];
+let allowedOrigins = [
+  "http://localhost:8080', 'http://testsite.com', 'http://localhost:1234',https://my-bond-flix.netlify.app/",
+];
 app.use(
   cors({
     origin: (origin, callback) => {
