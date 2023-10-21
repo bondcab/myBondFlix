@@ -42,8 +42,22 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
 //Middleware functions must be used
 app.use(morgan("combined", { stream: accessLogStream }));
 
-// 2.10 - Cross-Origin Resource Sharing module express will use
-app.use(cors());
+// 3.9 - Cross-Origin Resource Sharing module express will use
+let allowedOrigins = ["https://my-bond-flix.netlify.app/"];
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        let message =
+          "The CORS policy for this application doesn't allow access from origin " +
+          origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
 
 //2.9 - Passport module
 const passport = require("passport");
