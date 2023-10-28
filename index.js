@@ -46,7 +46,6 @@ app.use(morgan("combined", { stream: accessLogStream }));
 let allowedOrigins = [
   "http://localhost:8080",
   "http://localhost:1234",
-  "https://my-bond-flix.netlify.app",
   "https://mybond-flix.netlify.app",
 ];
 app.use(
