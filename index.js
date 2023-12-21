@@ -48,6 +48,7 @@ let allowedOrigins = [
   "http://localhost:1234",
   "https://mybond-flix.netlify.app",
   "http://localhost:4200",
+  "https://bondcab.github.io",
 ];
 app.use(
   cors({
