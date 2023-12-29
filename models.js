@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-//Schema for movies
+// Schema for movies
 let movieSchema = mongoose.Schema({
   Title: { type: String, required: true },
   Director: {
@@ -21,7 +21,7 @@ let movieSchema = mongoose.Schema({
   ImageURL: String,
 });
 
-//Schema for users
+// Schema for users
 let userSchema = mongoose.Schema({
   Username: { type: String, required: true },
   FavouriteFilms: [{ type: mongoose.Schema.Types.ObjectId, ref: "Movie" }],
