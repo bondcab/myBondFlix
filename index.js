@@ -44,6 +44,7 @@ let allowedOrigins = [
   "https://mybond-flix.netlify.app",
   "http://localhost:4200",
   "https://bondcab.github.io",
+  "http://localhost:3000",
 ];
 
 // Tells Express to use cors middelware to check requested origin is permitted
