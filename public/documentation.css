@@ -46,3 +46,10 @@ html body {
 .bondImage {
   width: 70%;
 }
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
