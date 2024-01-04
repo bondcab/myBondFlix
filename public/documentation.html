@@ -4,209 +4,272 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./documentation.css" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/documentation.css">
   </head>
   <body>
-    <h1 class="title">James Bond API</h1>
+    <h1 class="title">myBondFlix API</h1>
     <p class="sub-text">
       This API will store information on all 27 of the James Bond films released
       since 1962
     </p>
-    <br>
-    <br>
-    <br>
-  
-    <br>
-
-    <table class="table2">
-        <thead>
-          <tr>
-              <th>Business Logic</th>
-              <th>URL</th>
-              <th>HTTP Method</th>
-              <th>Request body data format</th>
-              <th>Response body data format</th>
-          </tr>
-          <tbody>
-              <tr>
-                  <td>Get a list of James Bond films</td>
-                  <td>/movies</td>
-                  <td>GET</td>
-                  <td>None</td>
-                  <td>A JSON object holding data about all the movies</td>
-              </tr>
-              <tr>
-                  <td>Get data about a single film by title</td>
-                  <td>/movies/[title]</td>
-                  <td>GET</td>
-                  <td>None</td>
-                  <td>A JSON object holding data about a single James Bond film, title, director, actor, year. Example:
-                    {
-                        title: 'Casino Royale',
-                        director: 'Martin Campbell',
-                        actor: 'Daniel Craig'
-                        year: '2006'
-
-                    }
-                  </td>
-              </tr>
-              <tr>
-                  <td>Get data about a director by directors name</td>
-                  <td>/movies/director/[director name]</td>
-                  <td>GET</td>
-                  <td>None</td>
-                  <td>A JSON object holding information about the director:
-                    {
-                        name: 'Martin Campbell',
-                        age: 79,
-                        DOB: '24/10/1943'
-                    }
-                  </td>
-              </tr>
-              <tr>
-                  <td>Register a user</td>
-                  <td>/users</td>
-                  <td>POST</td>
-                  <td>A JSON object holding data about a user to register:
-                    <br>
-                    {
-                        <br>
-                        "Username": "Tom Smith",
-                        <br>
-                        "Password": "Chocolate22",
-                        <br>
-                        "Email": "apple@gmail.com",
-                        <br>
-                        "DOB": "01/08/87"
-                        <br>
-                    }
-                  </td>
-                  <td>
-                    A JSON object holding data about the registered user:
-                    <br>
-                    {
-                        <br>
-                        "Username": "Tom Smith",
-                        <br>
-                        "Password": "Chocolate22",
-                        <br>
-                        "Email": "apple@gmail.com",
-                        <br>
-                        "DOB": "01/08/87"
-                        <br>
-                    }
-                  </td>
-              </tr>
-              <tr>
-                <td>User Login</td>
-
-                <td>/login?Username=[username]&Password=[password]</td>
-
-                
-
-                <td>POST</td>
-                <td>None
-                </td>
-                <td>
-                  A JSON object holding data about the registered user:
-                  <br>
-                  {
-                      <br>
-                      "Username": "Tom Smith",
-                      <br>
-                      "Password": "Chocolate22",
-                      <br>
-                      "Email": "apple@gmail.com",
-                      <br>
-                      "DOB": "01/08/87"
-                      <br>
-                  }
-                </td>
-            </tr>
-              <tr>
-                <td>Unregister a user</td>
-                <td>/users[username]</td>
-                <td>Delete</td>
-                <td>None</td>
-                <td>
-                  Text message indicating if user was deleted
-                </td>
-            </tr>
-              <tr>
-                  <td>Update user information</td>
-                  <td>/users[username]</td>
-                  <td>PUT</td>
-                  <td>A JSON object holding data with updated information:
-                    <br>
-                    {
-                        <br>
-                        "Username": "Tom Smith",
-                        <br>
-                        "Password": "Fruit22",
-                        <br>
-                        "Email": "apple@gmail.com",
-                        <br>
-                        "DOB": "01/08/87"
-                        <br>
-                    }</td>
-                  <td>A JSON object with the updated information and version: <br><br>
-                    {<br>
-                    "_id": "65034384a926abd2124b0655",<br>
-                    "Username": "Tom Smith",<br>
-                    "FavouriteFilms": [],<br>
-                    "DOB": "1987-08-01T00:00:00.000Z",<br>
-                    "Email": "apple@gmail.com",<br>
-                    "Password": "Chocolate22",<br>
-                    "__v": 0<br>
+    <div class="bondImageContainer">
+      <img class="bondImage" alt="bond" src="./bondImage1.jpeg"/>
+    </div>
+    <div class="documentation">
+      <div class="documentationContainer">
+      
+        <div class="container-fluid docContainer">
+          <div class="row">
+            <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p> Register a user </p></div>
+            <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/users</p></div>
+            <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>POST</p></div>
+            <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                <div>
+                    <p>A JSON object holding data about a user to register:</p>
+                    <br />
+                    <p>&#123</p>
+                    <p>"Username": "tommy1992"</p>
+                    <p>"First_Name": "Tom"</p>
+                    <p>"Last_Name": "Smith"</p>
+                    <p>"Email": "tom.smith@gmail.com"</p>
+                    <p>"DOB": "08/04/87"</p>
+                    <p>"Password": "Chocolate22"</p>
+                    <p>&#125</p>
+                </div>
+             
+            </div>
+            <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                <div>
+                    <p>A JSON object holding data about a user to register:</p>
+                    <br />
+                    <p>&#123</p>
+                    <p>"Username": "tommy1992"</p>
+                    <p>"First_Name": "Tom"</p>
+                    <p>"Last_Name": "Smith"</p>
+                    <p>"Email": "tom.smith@gmail.com"</p>
+                    <p>"DOB": "08/04/87"</p>
+                    <p>"Password": "Chocolate22"</p>
+                    <p>&#125</p>
+                </div>
+           </div>
+        </div>
+        <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p> Get user information </p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/users[username]</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>GET</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>None</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>A JSON object holding data about a user to register:</p>
+                      <br />
+                      <p>&#123</p>
+                      <p>"Username": "tommy1992"</p>
+                      <p>"First_Name": "Tom"</p>
+                      <p>"Last_Name": "Smith"</p>
+                      <p>"Email": "tom.smith@gmail.com"</p>
+                      <p>"DOB": "08/04/87"</p>
+                      <p>"Password": "Chocolate22"</p>
+                      <p>&#125</p>
+                  </div>
+             </div>
+          </div>
+          <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p> Update user information</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/users[username]</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>PUT</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>A JSON object holding data about a user to register:</p>
+                      <br />
+                      <p>&#123</p>
+                      <p>"Username": "tommy1992"</p>
+                      <p>"First_Name": "Tom"</p>
+                      <p>"Last_Name": "Smith"</p>
+                      <p>"Email": "tom.smith@gmail.com"</p>
+                      <p>"DOB": "08/04/87"</p>
+                      <p>"Password": "Chocolate22"</p>
+                      <p>&#125</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>A JSON object holding data about a user to register:</p>
+                      <br />
+                      <p>&#123</p>
+                      <p>"Username": "tommy1992"</p>
+                      <p>"First_Name": "Tom"</p>
+                      <p>"Last_Name": "Smith"</p>
+                      <p>"Email": "tom.smith@gmail.com"</p>
+                      <p>"DOB": "08/04/87"</p>
+                      <p>"Password": "Chocolate22"</p>
+                      <p>&#125</p>
+                  </div>
+             </div>
+          </div>
+          <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p> Delete user</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/users[username]</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>Delete</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>None</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>None</p>
+                  </div>
+             </div>
+          </div>
+          <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p>Get a list of James Bond films</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/movies</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>GET</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>None</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>A JSON object holding data about all the movies</p>
+                  </div>
+             </div>
+          </div>
+          <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p>Get data about a single film by title</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/movies[title]</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>GET</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>None</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>A JSON object holding data about a single James Bond film. Example:
+                        <p>&#123</p>
+                      <p>"title: 'Casino Royale',</p>
+                      <p>director: 'Martin Campbell',</p>
+                      <p>actor: 'Daniel Craig'</p>
+                      <p>year: '2006'</p>
+                  
+                      <p>&#125</p>
                     
-                }</td>
-              </tr>
-              <tr>
-                  <td>Users ability to add films to there favourites via the films id </td>
-                  <td>/users/[username]/movies/[id]</td>
-                  <td>POST</td>
-                  <td>None
-                  </td>
-                  <td>
-                    A JSON object with the updated information and version: <br><br>
-                    {<br>
-                    "_id": "65034384a926abd2124b0655",<br>
-                    "Username": "Tom Smith",<br>
-                    "FavouriteFilms": [64f897d28b23c0576f5ec9d3],<br>
-                    "DOB": "1987-08-01T00:00:00.000Z",<br>
-                    "Email": "apple@gmail.com",<br>
-                    "Password": "Chocolate22",<br>
-                    "__v": 0<br>
+                  </div>
+             </div>
+          </div>
+          <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p>Get data about a director by directors name</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/movies/director/[director name]</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>GET</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>None</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>A JSON object holding data about a single James Bond film. Example:
+                        <p>&#123</p>
+                      <p>"name: 'Martin Campbell',</p>
+                      <p>age: '79',</p>
+                      <p>DOB: '24/10/1943'</p>
+                   
+                  
+                      <p>&#125</p>
                     
-                }
-                  </td>
-              </tr>
-              <tr>
-                  <td>Users ability to remove title from favourite Bond films</td>
-                  <td>/users/[username]/movies/[id]</td>
-                  <td>DELETE</td>
-                  <td>None</td>
-                  <td>A JSON object with the updated information and version: <br><br>
-                    {<br>
-                    "_id": "65034384a926abd2124b0655",<br>
-                    "Username": "Tom Smith",<br>
-                    "FavouriteFilms": [],<br>
-                    "DOB": "1987-08-01T00:00:00.000Z",<br>
-                    "Email": "apple@gmail.com",<br>
-                    "Password": "Chocolate22",<br>
-                    "__v": 0<br>
+                  </div>
+             </div>
+          </div>
+          <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p>Users ability to add films to their favourites via the films id</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/users/[username]/movies/[id]</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>POST</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>None</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>A JSON object with the updated information. Example:
+                        <p>&#123</p>
+                        "_id": "65034384a926abd2124b0655",<br>
+                        "Username": "Tom Smith",<br>
+                        "FavouriteFilms": [64f897d28b23c0576f5ec9d3],<br>
+                        "DOB": "1987-08-01T00:00:00.000Z",<br>
+                        "Email": "apple@gmail.com",<br>
+                        "Password": "Chocolate22",<br>
+                        "__v": 0
+                   
+                  
+                      <p>&#125</p>
                     
-                }</td>
-              </tr>
-         
-          </tbody>
-        </thead>
-      </table>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-  </body>
-</html>
+                  </div>
+             </div>
+          </div>
+          <div class="container-fluid docContainer">
+            <div class="row">
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">Business Logic</p><p>Users ability to add films to their favourites via the films id</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">URL</p><p>/users/[username]/movies/[id]</p></div>
+              <div class="docItem col-xs-12 col-lg-2"><p class="docItemHeading">HTTP Method</p><p>DELETE</p></div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Request Body Data Format</p>
+                  <div>
+                      <p>None</p>
+                  </div>
+               
+              </div>
+              <div class="docItem col-xs-12 col-lg-3"><p class="docItemHeading">Response Body Data Format</p><div>
+                  <div>
+                      <p>A JSON object with the updated information. Example:
+                        <p>&#123</p>
+                        "_id": "65034384a926abd2124b0655",<br>
+                        "Username": "Tom Smith",<br>
+                        "FavouriteFilms": [],<br>
+                        "DOB": "1987-08-01T00:00:00.000Z",<br>
+                        "Email": "apple@gmail.com",<br>
+                        "Password": "Chocolate22",<br>
+                        "__v": 0
+                   
+                  
+                      <p>&#125</p>
+                    
+                  </div>
+             </div>
+          </div>
+
+    </div>
+    
